@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | SafeTech</title>
+    
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Custom CSS (if any custom styles are needed beyond Bootstrap, link them here) -->
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+    <style>
+        /* Custom styles to adjust for Bootstrap's default look or add branding */
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter font as per instructions */
+        }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        .navbar-brand span {
+            color: #007bff; /* Primary blue color for 'Tech' */
+        }
+        .navbar-nav .nav-link.active {
+            font-weight: 600;
+            color: #007bff !important; /* Ensure active link stands out */
+        }
+        .btn-contact {
+            margin-left: 15px; /* Spacing for the contact button in nav */
+        }
+
+        /* About Hero Section Customizations */
+        .about-hero {
+            background: linear-gradient(to right, #0056b3, #007bff); /* Darker blue gradient */
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .about-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .about-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Our Story Section */
+        .our-story {
+            padding: 60px 0;
+        }
+        .our-story .story-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem;
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+        }
+        .our-story .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        .our-story p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #495057;
+        }
+
+        /* Mission & Vision Section */
+        .mission-vision {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .mission-vision i {
+            font-size: 3rem;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .mission-vision h3 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .mission-vision p {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 60px 0;
+        }
+        .team .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .team .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .team .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #007bff;
+            box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.1);
+        }
+        .team .team-member h3 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .team .team-member span {
+            color: #6c757d;
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+        .team .team-member p {
+            color: #495057;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(to right, #007bff, #0056b3); /* Blue gradient */
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .cta h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .cta p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+        .contact-form .form-control {
+            border-radius: 0.5rem; /* Rounded corners */
+            padding: 12px 20px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.3);
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+        .contact-form .form-control::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        .contact-form textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .contact-form .btn-primary {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            border-radius: 0.5rem; /* Rounded corners */
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #212529; /* Dark background */
+            color: #adb5bd; /* Light grey text */
+            padding: 50px 0 20px;
+        }
+        .footer h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .footer p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+        .footer ul li a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer ul li a:hover {
+            color: #007bff;
+        }
+        .footer .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+        .footer .social-links a:hover {
+            color: #007bff;
+        }
+        .footer-bottom {
+            border-top: 1px solid #495057;
+            padding-top: 20px;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+        <div class="container">
+            <a href="Final-final-Index.html" class="navbar-brand logo">Safe<span>Tech</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Final-final-Index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Final-final-About.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Final-final-Services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary btn-contact" href="#contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero -->
+    <section class="about-hero d-flex align-items-center">
+        <div class="container">
+            <h1 class="mb-3">About SafeTech</h1>
+            <p class="lead">Protecting businesses in the digital age</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="our-story">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="story-content">
+                        <h2 class="section-title">Our Story</h2>
+                        <p>Founded in 2015, SafeTech began as a small team of cybersecurity experts passionate about helping Philippine businesses defend against digital threats. What started as a modest operation in Makati City has grown into one of the country's leading cybersecurity providers.</p>
+                        <p>Today, we're proud to serve over 500 businesses across various industries, from startups to large enterprises, providing comprehensive protection against evolving cyber threats.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="story-image">
+                        <img src="https://placehold.co/600x400/007bff/ffffff?text=Our+Team" onerror="this.onerror=null;this.src='images/team.jpg'" alt="SafeTech team" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="mission">
+                        <i class="fas fa-bullseye mb-3"></i>
+                        <h3>Our Mission</h3>
+                        <p>To provide accessible, enterprise-grade cybersecurity solutions that enable businesses to operate securely in the digital world.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="vision">
+                        <i class="fas fa-eye mb-3"></i>
+                        <h3>Our Vision</h3>
+                        <p>To create a safer digital Philippines where businesses can thrive without fear of cyber threats.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="team">
+        <div class="container">
+            <h2 class="section-title">Meet Our Leadership</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="team-member">
+                        <img src="Capio-CEO.jpg" onerror="this.onerror=null;this.src='images/ceo.jpg'" alt="Rafael Santiago" class="img-fluid rounded-circle">
+                        <h3>Capio, Nyrylle Ralph M.</h3>
+                        <span>CEO & Founder</span>
+                        <p>15+ years in cybersecurity with expertise in threat intelligence</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="team-member">
+                        <img src="JaneDoe.jpg" onerror="this.onerror=null;this.src='images/cto.jpg'" alt="Lisa Reyes" class="img-fluid rounded-circle">
+                        <h3>Jane Doe</h3>
+                        <span>Chief Technology Officer</span>
+                        <p>Specializes in network security and infrastructure protection</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="team-member">
+                        <img src="JohnDoe.jpg" onerror="this.onerror=null;this.src='images/cso.jpg'" alt="Carlos Mendoza" class="img-fluid rounded-circle">
+                        <h3>John Doe</h3>
+                        <span>Chief Security Officer</span>
+                        <p>Former white-hat hacker with deep knowledge of attack vectors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section (Contact Form) -->
+    <section class="cta py-5" id="contact">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="cta-content">
+                        <h2 class="mb-3">Ready to Enhance Your Security?</h2>
+                        <p class="lead mb-4">Get a free cybersecurity assessment today</p>
+                        <form class="contact-form text-start" action="https://formsubmit.co/nyrylleralph420@gmail.com" method="POST">
+                            <!-- Formsubmit.co specific hidden input for captcha -->
+                            <input type="hidden" name="_captcha" value="false">
+                            <div class="mb-3">
+                                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="tel" name="phone" class="form-control" placeholder="Phone Number">
+                            </div>
+                            <div class="mb-4">
+                                <textarea name="message" class="form-control" placeholder="How can we help you?"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Get Protected</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row footer-grid">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h3>SafeTech</h3>
+                    <p>Your trusted partner in cybersecurity solutions since 2015.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h3>Quick Links</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="Final-final-Index.html">Home</a></li>
+                        <li><a href="Final-final-About.html">About Us</a></li>
+                        <li><a href="Final-final-Services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Contact Us</h3>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Makati City, Philippines</li>
+                        <li><i class="fas fa-phone me-2"></i> (+63)21 582 9710</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@safetech.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom pt-3 mt-4 border-top border-secondary">
+                <p class="mb-0">&copy; 2023 SafeTech Cybersecurity. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Your custom JavaScript (if any, after Bootstrap JS) -->
+    <!-- <script src="js/main.js"></script> -->
+</body>
+</html>
